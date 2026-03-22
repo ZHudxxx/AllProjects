@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio | 'Izzatul Zubit </title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.jpg" type="image/jpg">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: left;
+  background-color: #fff;
+}
+/* Navbar */
+nav {
+    position: sticky;
+    top: 0;          
+    z-index: 1000;    
+    width: 100%;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #7494bf; 
+    padding: 3px 30px;
+    box-shadow: 0 5px 10px rgba(36, 36, 36, 0.2);
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links li a {
+    color: #3e427a;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5.2px 30px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+}
+
+.nav-links li a i {
+    margin-right: 8px; 
+    font-size: 14px; 
+    vertical-align: middle;
+}
+.nav-links li a:hover {
+    background-color: #5a7ca2; 
+    color: #fff;
+     
+}
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+        /* Main Content */
+        .main-content {
+            padding: 20px;
+        }
+
+        /* Header Section */
+        header {
+            background: url('images/headback.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            margin-top: 20px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            border-radius: 15px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 180px;
+            margin-right: 50px;
+            box-shadow: 0 4px 40px #04002151;
+            border-radius: 10px;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .header-top {
+            font-size: 34px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header-bottom {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .portfolio-title {
+            font-size: 34px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 40px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #006ab1;
+        }
+
+        .section {
+            margin: 60px 20px;
+            padding: 35px;
+            padding-top: 55px;
+            padding-bottom: 60px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 25px;
+        }
+        hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            background-color: #a5bedb;
+            margin: 5px 2px;
+            padding: 6px 1px;
+            padding-left: 4px;
+            padding-right: 4px;
+            border-radius: 6px;
+           
+        }
+/* project section*/
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 50%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+@media (max-width: 768px) {
+  .slideshow-container .text {
+    display: none;
+  }
+}
+
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 4px 10px;
+  position: absolute;
+  bottom: 8px;
+  text-align: left;
+  font-weight: normal;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next, .text {font-size: 11px}
+}
+
+/* Slideshow images */
+.mySlides img {
+  width: auto;  
+  height: auto; 
+  max-width: 100%; 
+  border-radius: 12px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 10px 0px 20px 20px;
+    background-color: #ffffff;
+    
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    max-width: 1200px;  
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap; 
+}
+
+.contact-links {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.contact-links li {
+    margin-bottom: 15px; 
+    background-color: #b4cbec;
+}
+
+.contact-links a {
+    font-size: 18px;
+    color: #15214d;
+    text-decoration: none;
+    display: inline-flex; 
+    align-items: center;
+    transition: color 0.3s ease;
+    padding: 2px 40px 2px 10px;
+}
+
+.contact-links a:hover {
+    color: #2980b9;
+}
+
+.contact-links i {
+    margin-right: 10px; 
+    font-size: 20px;
+    padding: 2px 10px 2px 10px;
+}
+
+
+.contact-form {
+    flex: 1 1 50%;
+    background-color: #fff;
+    padding: 20px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px; 
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px; 
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;  
+}
+
+.contact-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 20px;  
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #2980b9;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        
+    }
+
+    .contact-links {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .contact-form {
+        max-width: 100%;
+    }
+}
+
+ /* Footer */
+ footer {
+            background-color: #7494bf;
+            color: #fff;
+            padding: 6px 10px; 
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 2px 10px;
+            font-size: 18px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    
+/* Mobile Responsiveness */
+@media (max-width: 768px) 
+{
+    nav {
+        position: sticky; 
+        top: 0px;          
+        left: 0;
+        width: 100%;   
+        z-index: 1000;
+        padding: 2px 10px;    
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        position: fixed;
+        left: 0;
+        top: 49px; 
+        background: #7595be;
+        padding: 10px;
+        border-radius: 0 8px 8px 0;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        width: 60px;
+        height: calc(100vh - 60px); 
+    }
+    .nav-links.active {
+        display: flex; 
+    }
+
+    .nav-links li a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2px 18px;
+        position: relative;
+        color: white;
+    }
+
+    /* Hide text but allow tooltip */
+    .nav-links li a span {
+        display: none; 
+    }
+
+    /* Tooltip on hover */
+    .nav-links li a:hover::after {
+        content: attr(data-tooltip); 
+        position: absolute;
+        left: 40px; 
+        top: 30%;
+        transform: translateY(-50%);
+        background: rgba(51, 80, 113, 0.8);
+        color: #fff;
+        padding: 5px 20px;
+        border-radius: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+}
+/* Hamburger Menu for Mobile */
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10%; 
+    right: 10px; 
+    transform: translateY(-50%); 
+}
+
+/* Hide Hamburger on desktop */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    .skills-container {
+        grid-template-columns: 1fr; 
+    }
+    
+}
+/* Skills Section */
+#skills {
+    margin-bottom: 20px;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+}
+
+/* Left and Right Columns */
+.skills-left,
+.skills-right {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.skills-left li,
+.skills-right li {
+    background-color: #a5bedb;
+    margin: 5px 2px;
+    padding: 6px 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 6px;
+}
+
+    </style>
+</head>
+<body>
+     <!-- Navbar Section -->
+     <nav>
+        <div class="logo">
+            <img src="images/favicon.jpg" alt="Logo" />
+            <span>My Portfolio</span>
+        </div>
+        <!-- Navbar Links -->
+        <ul class="nav-links">
+            <li><a href="#about" data-tooltip="About Me"><i class="fas fa-user"></i><span>About Me</span></a></li>
+            <li><a href="#skills" data-tooltip="Skills"><i class="fas fa-laptop-code"></i><span>Skills</span></a></li>
+            <li><a href="#projects" data-tooltip="Projects"><i class="fas fa-project-diagram"></i><span>Projects</span></a></li>
+            <li><a href="#contact" data-tooltip="Contact"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+        </ul>
+        <!-- Hamburger Button -->
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </nav>
+    
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Header Section -->
+        <header>
+            <img src="images/gambarsaya.jpg" alt="Profile Picture" class="profile-image">
+            <div class="header-content">
+                <div class="header-top">NUR 'IZZATUL HUDA ZUBIT.</div>
+                <div class="header-bottom">
+                    <p>A student | Software and Web Designer.</p>
+                    <button onclick="window.open('resume.pdf', '_blank')">View My Resume</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>My name is Nur 'Izzatul Huda Binti Zubit, born in June from Kedah. I am currently pursuing a degree in Computer Science (Hons.) in Multimedia Computing at UiTM Shah Alam, after completing my Diploma in Computer Science at UiTM Kedah.</p>
+            <p>Throughout my academic journey, I have gained proficiency in a wide range of programming languages, equipping me with the skills necessary to work on various software development and multimedia projects. My passion for technology drives me to continue exploring new programming languages and techniques to stay at the forefront of the ever-evolving tech landscape.</p>
+        </section>
+        
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Frontend & Web Development</h3>
+                    <ul class="skills-left">
+                        <li>Responsive Web Design</li>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>React, Angular, Node.js, Django, Flask, Laravel, Bootstrap, jQuery</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Programming Languages and Database</h3>
+                    <ul class="skills-right">
+                        <li>Python, Java, C++, C, PHP</li>
+                        <li>Firebase Realtime Database, Oracle Database</li>
+                        <li>Database Management (MySQL, Xampp)</li>
+
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Tools & Software</h3>
+                    <ul class="skills-left">
+                        <li>Blender 4.1, Adobe Photoshop, VMware, Canva, Sketch</li>
+                        <li>Git, GitHub,Visual Studio Code, NetBeans, Android Studio</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Soft Skills</h3>
+                    <ul class="skills-right">
+                        <li>Open to change, Problem-solving, Quick learner</li>
+                        <li>Teamwork, Good listener, Collaboration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            
+<div class="slideshow-container">
+
+    <!-- Project 1 -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/project (1).png" alt="Project 1 Image" style="width:100%">
+      <div class="text">
+        <h3>Project 1: eCarclean</h3>
+        <p><strong>Technologies:</strong> HTML, CSS, JavaScript, PHP</p>
+        <p>eCarclean is a user-friendly web app designed for booking car wash services. With a simple and intuitive interface, users can easily select a time slot and reserve a car wash service, ensuring a smooth and convenient experience.</p>
+      </div>
+    </div>
+    
+    <!-- Project 2 -->
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/project (2).png" alt="Project 2 Image" style="width:100%">
+      <div class="text">
+        <h3>Project 2: UniShop</h3>
+        <p><strong>Technologies:</strong>HTML, CSS, JavaScript</p>
+        <p>Unishop is a student-focused e-commerce website designed to simplify the process of buying and selling university-related items. It offers a platform for students to list and purchase campus essentials, fostering a convenient and community-driven marketplace.</p>
+      </div>
+    </div>
+    
+    <!-- Project 3 -->
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/project (3).png" alt="Project 3 Image" style="width:100%">
+      <div class="text">
+        <h3>Project 3: Audi A6 model</h3>
+        <p><strong>Technologies:</strong> Blender 4.1</p>
+        <p>This project involves creating a detailed 3D model of the Audi A6 using Blender. The aim is to capture the car's intricate features, from the body structure to the fine details of the interior, providing a realistic and high-quality representation of the vehicle.</p>
+      </div>
+    </div>
+     
+    <!-- Navigation Arrows -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    
+    <!-- Dots Indicators -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+        </section>
+        
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-container">
+        <div class="contact-links">
+            <ul>
+                <li><a href="mailto:zatulzubit02@gmail.com"><i class="fas fa-envelope"></i>zatulzubit02@gmail.com</a></li>
+                <li><a href="tel:"><i class="fas fa-phone"></i></a></li>
+                <li><a href="" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a></li>
+                <li><a href="https://github.com/ZHudxxx"><i class="fab fa-github"></i>GitHub</a></li>
+            </ul>
+        </div>
+        
+        <div class="contact-form">
+            <h3>Reach Me</h3>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2024 'Izzatul Zubit | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        setInterval(function() {
+          plusSlides(1); 
+        }, 3000);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+</script>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+    
+</script>
+</body>
+</html>
