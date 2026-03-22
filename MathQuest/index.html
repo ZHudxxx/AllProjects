@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MathQuest — Algebra Adventure</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: rgba(11, 18, 32, 0.85);
+      --accent: #6b46c1;
+      --accent-2: #7dd3fc;
+      --muted: #9ca3af;
+      --glass: rgba(255, 255, 255, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: Inter, system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #e6eef8;
+      background: url("wallpaper.png") center/cover no-repeat fixed;
+      background-color: #071026;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 28px;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(6px);
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .logo img {
+      height: auto;
+      max-height: 32px;
+      max-width: 120px;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .auth-buttons button {
+      background: linear-gradient(90deg, var(--accent), #8b5cf6);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .auth-buttons button:hover {
+      transform: scale(1.05);
+    }
+
+    /* MAIN CONTENT */
+    main {
+      text-align: center;
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .main-title {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.6);
+    }
+
+    .menu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-btn {
+      background: var(--card);
+      border: none;
+      border-radius: 14px;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      width: 180px;
+      height: 100px;
+      box-shadow: 0 6px 20px rgba(2,6,23,0.5);
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .menu-btn:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+
+    /* FOOTER */
+    footer {
+      position: absolute;
+      bottom: 12px;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo" onclick="window.location.href='main.html'">
+      <img src="MathQuestLogo.png" alt="MathQuest Logo">
+      <div>
+        <div style="font-weight:700">MathQuest</div>
+        <div style="font-size:12px;color:var(--muted)">Algebra Adventure</div>
+      </div>
+    </div>
+
+    <div class="auth-buttons">
+      <button onclick="openLogin()">Login</button>
+      <button onclick="openSignup()">Sign Up</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="main-title">Choose Your Adventure</div>
+    <div class="menu-grid">
+      <button class="menu-btn" onclick="window.location.href='learn.html'">📘 Learn</button>
+      <button class="menu-btn" onclick="window.location.href='quiz.html'">🧮 Quiz</button>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>© 2025 MathQuest — Algebra Adventure</footer>
+
+  <!-- LOGIN & SIGNUP POPUPS -->
+  <div id="popupOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); backdrop-filter:blur(6px); justify-content:center; align-items:center; z-index:999;">
+    <div id="popupBox" style="background:rgba(11,18,32,0.9); padding:30px; border-radius:12px; width:320px; text-align:left;">
+      <h3 id="popupTitle" style="margin-top:0;">Login</h3>
+      <input type="text" placeholder="Username" style="width:100%; padding:10px; border-radius:8px; border:none; margin-bottom:10px;">
+      <input type="password" placeholder="Password" style="width:100%; padding:10px; border-radius:8px; border:none; margin-bottom:10px;">
+      <button style="width:100%; padding:10px; border:none; border-radius:8px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; font-weight:700;">Submit</button>
+      <div style="text-align:center; margin-top:10px;">
+        <button onclick="closePopup()" style="background:none; border:none; color:var(--muted); cursor:pointer;">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openLogin(){
+      document.getElementById('popupOverlay').style.display='flex';
+      document.getElementById('popupTitle').textContent='Login';
+    }
+    function openSignup(){
+      document.getElementById('popupOverlay').style.display='flex';
+      document.getElementById('popupTitle').textContent='Sign Up';
+    }
+    function closePopup(){
+      document.getElementById('popupOverlay').style.display='none';
+    }
+  </script>
+
+</body>
+</html>

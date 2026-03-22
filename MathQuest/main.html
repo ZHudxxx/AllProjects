@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MathQuest — Algebra Adventure</title>
+<style>
+  :root {
+    --accent: #6b46c1;
+    --accent2: #8b5cf6;
+  }
+  * {
+    box-sizing: border-box;
+    font-family: Poppins, Inter, system-ui, Segoe UI, Roboto, Arial;
+  }
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: url('wallpaper.png') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .logo-img {
+    width: 420px;
+    max-width: 80%;
+    margin-top: 10vh; /* position logo slightly lower than top */
+    animation: fadeIn 1.5s ease;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+  }
+
+  /* Play Button */
+  .play-btn {
+    padding: 18px 50px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(107,70,193,0.7);
+    transition: transform 0.2s, box-shadow 0.3s;
+    margin-top: 50px; /* pushes the button lower */
+    animation: fadeIn 2.2s ease;
+  }
+
+  .play-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(139,92,246,0.9);
+  }
+
+  /* Loading overlay */
+  .loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+  }
+  .loading-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .spinner {
+    border: 5px solid rgba(255,255,255,0.2);
+    border-top: 5px solid #8b5cf6;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+  }
+
+  .loading-text {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #dbeafe;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 16px;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+  }
+</style>
+</head>
+<body>
+
+ 
+  <img src="MathQuestLogo.png" alt="MathQuest Logo" class="logo-img">
+
+  <!-- Play button -->
+  <button class="play-btn" onclick="startGame()">▶ PLAY</button>
+
+  <!-- Loading overlay -->
+  <div class="loading-overlay" id="loading">
+    <div class="spinner"></div>
+    <div class="loading-text">Loading...</div>
+  </div>
+
+  <footer>© 2025 MathQuest — Algebra Adventure</footer>
+
+  <script>
+    function startGame() {
+      const loading = document.getElementById('loading');
+      loading.classList.add('active');
+      // Show loading for 2.5 seconds before redirect
+      setTimeout(() => {
+        document.body.style.transition = "opacity 1s ease";
+        document.body.style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 800);
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
