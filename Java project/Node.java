@@ -1,20 +1,28 @@
-
-public class Node{
-    Object data;
-    Node next;
-
-    public Node(Object data){
-        this(data,null);
-    }
-    public Node(Object data, Node next){
-        this.data = data;
-        this.next = next;
-    }
-
-    public Object getData(){
-        return data;
-    }
-    public Node getLink(){
-        return next;
-    }
+public class Node{ 
+ int data;
+ Node next;
+Node(int d)
+{
+ data = d;
+}
+public void display()
+{
+ System.out.println("The product was : ");
+ if(data == 1)
+ {
+ System.out.println("[BAG BY PRADA]");
+ }
+ else if(data == 2)
+ { 
+ System.out.println("[BAG BY GUCCI]");
+ }
+ else if(data == 3)
+ {
+ System.out.println("[BAG BY DIOR]");
+ } 
+ else if(data == 4)
+ {
+ System.out.println("[BAG BY BURBERRY]");
+ } 
+}
 }
