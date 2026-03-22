@@ -1,0 +1,21 @@
+20230001,Ali bin Hassan
+CS102,Data Structures
+CS101,Introduction to Programming
+
+20230002,Nur Aisyah
+CS104,Computer Architecture
+CS103,Discrete Mathematics
+CS101,Introduction to Programming
+
+20230003,John Tan
+CS105,Object-Oriented Programming
+CS102,Data Structures
+
+20230004,Siti Nurhaliza
+CS101,Introduction to Programming
+
+20230005,Faris Ahmad
+CS107,Operating Systems
+CS105,Object-Oriented Programming
+CS103,Discrete Mathematics
+
